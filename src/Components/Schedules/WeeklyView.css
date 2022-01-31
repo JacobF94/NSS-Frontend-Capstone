@@ -1,0 +1,15 @@
+.all-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-day {
+    border: 2px solid black;
+    padding: 5rem;
+    margin: 5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

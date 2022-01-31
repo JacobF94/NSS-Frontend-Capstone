@@ -1,0 +1,25 @@
+.homepage_greeting {
+    color: rgb(238, 153, 55);
+    text-align: center;
+}
+
+.homepage_body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 1rem black;
+}
+
+.homepage_today {
+    border: 5px solid black;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.homepage_week {
+    border: 5px solid black;
+    padding: 1rem;
+    margin: 1rem;
+}
