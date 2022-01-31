@@ -3,7 +3,7 @@ import "./WeeklyView.css";
 import { allUserExerciseDetails } from "../ApiManager";
 
 export const WeeklyView = () => {
-    const [userDetails, setDetails] = useState([])
+    const [allUserDays, setUserDays] = useState([])
     const [sunday, setSunday] = useState([])
     const [monday, setMonday] = useState([])
     const [tuesday, setTuesday] = useState([])
@@ -17,23 +17,31 @@ export const WeeklyView = () => {
             allUserExerciseDetails(parseInt(localStorage.getItem("fitness-user")))
                 .then(res => res.json())
                 .then((data) => {
-                    setDetails(data)
+                    setUserDays(data);
+                    setSunday(data.filter(data.day.id === 1))
                 })
         }, []
     )
 
-    return (
-        <>
-            <div className="all-content">
-                {userDetails.map(
-                    (day) => {
-                        return <div className="single-day" key={`day--${day.id}`}>
-                            <h2>{day.day.day}</h2>
-                            <p>{day.exercise.name}</p>
-                        </div>
-                    }
-                )}
-            </div>
-        </>
-    )
+        return (
+            <>
+                    {sunday?.map((day) => {
+                        return <p>{day.exercise.name}</p>
+                    })}
+            </>
+        )
+//     return (
+//         <>
+//             <div className="all-content">
+//                 {allUserDays.map(
+//                     (day) => {
+//                         return <div className="single-day" key={`day--${day.id}`}>
+//                             <h2>{day.day.day}</h2>
+//                             <p>{day.exercise.name}</p>
+//                         </div>
+//                     }
+//                 )}
+//             </div>
+//         </>
+//     )
 }
