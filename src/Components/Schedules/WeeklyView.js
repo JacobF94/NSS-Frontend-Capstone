@@ -3,7 +3,6 @@ import "./WeeklyView.css";
 import { allUserExerciseDetails } from "../ApiManager";
 
 export const WeeklyView = () => {
-    const [allUserDays, setUserDays] = useState([])
     const [sunday, setSunday] = useState([])
     const [monday, setMonday] = useState([])
     const [tuesday, setTuesday] = useState([])
@@ -17,31 +16,63 @@ export const WeeklyView = () => {
             allUserExerciseDetails(parseInt(localStorage.getItem("fitness-user")))
                 .then(res => res.json())
                 .then((data) => {
-                    setUserDays(data);
-                    setSunday(data.filter(data.day.id === 1))
+                    setSunday(data.filter(x => x.day.id === 1));
+                    setMonday(data.filter(x => x.day.id === 2));
+                    setTuesday(data.filter(x => x.day.id === 3));
+                    setWednesday(data.filter(x => x.day.id === 4));
+                    setThursday(data.filter(x => x.day.id === 5));
+                    setFriday(data.filter(x => x.day.id === 6));
+                    setSaturday(data.filter(x => x.day.id === 7));
                 })
         }, []
     )
 
         return (
             <>
-                    {sunday?.map((day) => {
-                        return <p>{day.exercise.name}</p>
-                    })}
+                <div className="all-content">
+                    <div className="single-day">
+                    <h1>Sunday</h1>
+                        {sunday.map((x) => {
+                            return <p key={`day--${x.id}`}>{x.exercise.name}</p>
+                        })}
+                    </div>
+                    <div className="single-day">
+                    <h1>Monday</h1>
+                        {monday.map((x) => {
+                            return <p key={`day--${x.id}`}>{x.exercise.name}</p>
+                        })}
+                    </div>
+                    <div className="single-day">
+                    <h1>Tuesday</h1>
+                        {tuesday.map((x) => {
+                            return <p key={`day--${x.id}`}>{x.exercise.name}</p>
+                        })}
+                    </div>
+                    <div className="single-day">
+                    <h1>Wednesday</h1>
+                        {wednesday.map((x) => {
+                            return <p key={`day--${x.id}`}>{x.exercise.name}</p>
+                        })}
+                    </div>
+                    <div className="single-day">
+                    <h1>Thursday</h1>
+                        {thursday.map((x) => {
+                            return <p key={`day--${x.id}`}>{x.exercise.name}</p>
+                        })}
+                    </div>
+                    <div className="single-day">
+                    <h1>Friday</h1>
+                        {friday.map((x) => {
+                            return <p key={`day--${x.id}`}>{x.exercise.name}</p>
+                        })}
+                    </div>
+                    <div className="single-day">
+                    <h1>Saturday</h1>
+                        {saturday.map((x) => {
+                            return <p key={`day--${x.id}`}>{x.exercise.name}</p>
+                        })}
+                    </div>
+                </div>
             </>
         )
-//     return (
-//         <>
-//             <div className="all-content">
-//                 {allUserDays.map(
-//                     (day) => {
-//                         return <div className="single-day" key={`day--${day.id}`}>
-//                             <h2>{day.day.day}</h2>
-//                             <p>{day.exercise.name}</p>
-//                         </div>
-//                     }
-//                 )}
-//             </div>
-//         </>
-//     )
 }
