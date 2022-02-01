@@ -12,7 +12,7 @@ export const NavBar = () => {
                 <Link className="navbar__link" to="/week">Your Schedule</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Exercise List</Link>
+                <Link className="navbar__link" to="/exlist">Exercise List</Link>
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="#" onClick={

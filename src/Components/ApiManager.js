@@ -21,3 +21,11 @@ export const getUserByEmail = (email) => {
 export const allUserExerciseDetails = (id) => {
     return fetch(`http://localhost:8088/userExercises?_expand=user&_expand=day&_expand=exercise&userId=${id}`)
 }
+
+export const getAllEx = () => {
+    return fetch(`http://localhost:8088/exercises`)
+}
+
+export const getSingleEx = (id) => {
+    return fetch(`http://localhost:8088/exercises/${id}`)
+}
