@@ -26,7 +26,7 @@ export const ExDetails = () => {
         <>
             <h2>{ex.name}</h2>
             <p>{ex.howTo}</p>
-            <p>{ex.imageURL}</p>
+            <image src={ex.imageURL} alt="exercise image reference" />
         <button className="bttn" onClick={returnBttn}>Return to list</button>
         </>
     )
