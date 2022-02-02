@@ -11,7 +11,6 @@ export const Register = (props) => {
 
     const existingUserCheck = () => {
         getUserByEmail(user.email)
-            .then(res => res.json())
             .then(user => !!user.length)
     }
     const handleRegister = (e) => {
@@ -26,7 +25,6 @@ export const Register = (props) => {
                         },
                         body: JSON.stringify(user)
                     })
-                        .then(res => res.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 localStorage.setItem("fitness-user", createdUser.id)

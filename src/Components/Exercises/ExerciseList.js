@@ -8,7 +8,6 @@ export const ExerciseList = () => {
 
     useEffect(() => {
         getAllEx()
-            .then(res => res.json())
             .then((data) => {
                 setList(data)
             })
