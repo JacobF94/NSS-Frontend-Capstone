@@ -11,7 +11,6 @@ export const Login = () => {
 
     const existingUserCheck = (data) => {return(
         getUserByEmail(data)
-            .then(res => res.json())
             .then(user => user.length ? user[0] : false))
     }
 
