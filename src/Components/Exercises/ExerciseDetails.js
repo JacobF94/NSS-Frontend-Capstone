@@ -16,7 +16,7 @@ export const ExDetails = () => {
                     setEx(data)
                 })
         },
-        []
+        [exId]
     )
 
     const returnBttn = () => {
@@ -26,7 +26,7 @@ export const ExDetails = () => {
         <>
             <h2>{ex.name}</h2>
             <p>{ex.howTo}</p>
-            <image src={ex.imageURL} alt="exercise image reference" />
+            <img src={ex.imageURL} alt="exercise image reference" />
         <button className="bttn" onClick={returnBttn}>Return to list</button>
         </>
     )

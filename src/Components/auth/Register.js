@@ -10,7 +10,7 @@ export const Register = (props) => {
     const history = useHistory()
 
     const existingUserCheck = () => {
-        getUserByEmail(user.email)
+        return getUserByEmail(user.email)
             .then(user => !!user.length)
     }
     const handleRegister = (e) => {
@@ -25,10 +25,11 @@ export const Register = (props) => {
                         },
                         body: JSON.stringify(user)
                     })
-                        .then(createdUser => {
+                        .then(res => res.json())
+                        .then((createdUser) => {
                             if (createdUser.hasOwnProperty("id")) {
-                                localStorage.setItem("fitness-user", createdUser.id)
-                                history.push("/")
+                                localStorage.setItem("fitness-user", createdUser.id);
+                                return history.push("/homepage")
                             }
                         })
                 }
