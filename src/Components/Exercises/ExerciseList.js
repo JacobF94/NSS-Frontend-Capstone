@@ -12,8 +12,39 @@ export const ExerciseList = () => {
                 setList(data)
             })
     }, [])
+
+    const noWeights = () => {
+        getAllEx()
+            .then((data) => {
+                setList(data.filter((x) => {
+                   return x.freeweight === false
+                }))
+            })
+    }
+
+    const hasWeights = () => {
+        getAllEx()
+        .then((data) => {
+            setList(data.filter((x) => {
+               return x.freeweight === true
+            }))
+        })
+    }
+
+    const clearFilter = () => {
+        getAllEx()
+            .then((data) => {
+                setList(data)
+            })
+    }
+
     return(
         <>
+        <div>
+            <button onClick={() => {noWeights()}}>No Weights?</button>
+            <button onClick={() => {hasWeights()}}>Only Weights?</button>
+            <button onClick={() => {clearFilter()}}>Clear Filter</button>
+        </div>
             <ul>
                 {exlist.map((x) => {
                     return <li className="single-ex" key={`exercise--${x.id}`}><Link to={`/exdetails/${x.id}`}>{x.name}</Link> - {x.description}</li>

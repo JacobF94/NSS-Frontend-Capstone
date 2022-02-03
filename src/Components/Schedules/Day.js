@@ -7,6 +7,8 @@ export const Day = () => {
     const [userDayExercises, setUserDayExercises] = useState([])
     const [unusedExercises, setUnusedEx] = useState([])
     const {dayId} = useParams()
+    const week = [, "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
 
     const doCurrentFetch = () => {
         getUserDayEx(localStorage.getItem("fitness-user"), dayId)
@@ -23,6 +25,7 @@ export const Day = () => {
         getAllEx()
             .then((data) => {
                 const tempArray = data.filter((x) => {
+                    debugger
                     const availableExercises = userDayExercises.filter((exercise) => {
                         return exercise.exerciseId !== x.id
                     })
@@ -50,7 +53,7 @@ export const Day = () => {
     return(
         <>
             <div>
-                <h1>{dayId}</h1>
+                <h1>{week[dayId]}</h1>
             </div>
             <div>
                 {
