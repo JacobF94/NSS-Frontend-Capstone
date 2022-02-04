@@ -11,7 +11,6 @@ export const ExDetails = () => {
     useEffect(
         () => {
             getSingleEx(exId)
-                .then(response => response.json())
                 .then((data) => {
                     setEx(data)
                 })
@@ -25,8 +24,9 @@ export const ExDetails = () => {
     return(
         <>
             <h2>{ex.name}</h2>
-            <p>{ex.howTo}</p>
-            <img src={ex.imageURL} alt="exercise image reference" />
+            <p>{ex.description}</p>
+            <img src={`/images/${ex.imageURL}`} alt="exercise image" />
+            <br />
         <button className="bttn" onClick={returnBttn}>Return to list</button>
         </>
     )

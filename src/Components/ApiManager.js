@@ -44,3 +44,18 @@ export const deleteExercise = (id) => {
 export const addNewExercise = (data) => {
     return fetch(`http://localhost:8088/userExercises`, fetchPostOptions(data))
 }
+
+export const getUserDayNotes = (x,y) => {
+    return fetch(`http://localhost:8088/notes?userId=${x}&dayId=${y}&_expand=user&_expand=day`)
+        .then(res => res.json())
+}
+
+export const addNewNote = (data) => {
+    return fetch(`http://localhost:8088/notes`, fetchPostOptions(data))
+}
+
+export const deleteNote = (id) => {
+    return fetch(`http://localhost:8088/notes/${id}`, {
+        method: "DELETE"
+    })
+}

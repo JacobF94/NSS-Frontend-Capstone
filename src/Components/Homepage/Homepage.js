@@ -30,7 +30,7 @@ export const Homepage = () => {
             </h1>
             <div className="homepage_body">
                 <div className="homepage_today">
-                        <div>Schedule for {week[todayId]}!</div>
+                        <div className="weekday-greeting">Schedule for {week[todayId]}!</div>
                         <ul>
                             {userCurrentDayDetails.map((data) => {
                                 return <li className="exercise_detail" key={`ex--${data.id}`}><Link to={`/exdetails/${data.exercise.id}`}>{data.exercise.name}</Link></li>
@@ -38,26 +38,30 @@ export const Homepage = () => {
                         </ul>
                 </div>
                 <div className="homepage_week">
+                    <h2>Select a day to edit</h2>
                     <Link to="day/1">
-                        <button>Sunday</button>
+                        <button className="homepage-bttn">Sunday</button>
                     </Link>
                     <Link to="day/2">
-                        <button>Monday</button>
+                        <button className="homepage-bttn">Monday</button>
                         </Link>
                     <Link to="day/3">
-                        <button>Tuesday</button>
+                        <button className="homepage-bttn">Tuesday</button>
                     </Link>
                     <Link to="day/4">
-                        <button>Wednesday</button>
+                        <button className="homepage-bttn">Wednesday</button>
                     </Link>
                         <Link to="day/5">
-                        <button>Thursday</button>
+                        <button className="homepage-bttn">Thursday</button>
                     </Link>
                         <Link to="day/6">
-                        <button>Friday</button>
+                        <button className="homepage-bttn">Friday</button>
                     </Link>
                         <Link to="day/7">
-                        <button>Saturday</button>
+                        <button className="homepage-bttn">Saturday</button>
+                    </Link>
+                    <Link to="week">
+                        <button className="homepage-bttn">Week at a Glance</button>
                     </Link>
                 </div>
             </div>
