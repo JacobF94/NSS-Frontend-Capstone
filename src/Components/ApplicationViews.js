@@ -5,6 +5,7 @@ import { WeeklyView } from "./Schedules/WeeklyView";
 import { ExerciseList } from "./Exercises/ExerciseList";
 import { ExDetails } from "./Exercises/ExerciseDetails";
 import { Day } from "./Schedules/Day"
+
 export const ApplicationViews = () => {
     return (
         <>
