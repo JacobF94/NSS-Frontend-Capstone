@@ -23,6 +23,9 @@ export const ApplicationViews = () => {
             <Route path="/day/:dayId(\d+)">
                 <Day />
             </Route>
+            <Route exact path="/">
+                <Homepage />
+            </Route>
         </>
     )
 }
