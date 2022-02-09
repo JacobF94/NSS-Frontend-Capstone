@@ -1,0 +1,20 @@
+.ExName {
+    color: rgb(238, 153, 55);
+    text-align: center;
+}
+
+.ExDesc {
+    text-align: center;
+}
+
+.returnBttn {
+    border-radius: 12px;
+    background-color:rgb(238, 153, 55);
+    margin-left: 90%;
+}
+
+.ExImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

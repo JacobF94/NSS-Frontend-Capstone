@@ -11,6 +11,8 @@
     border: 5px solid black;
     padding: 1rem;
     margin: 1rem;
+    flex-direction: column;
+    flex: 1 1 0;
 }
 
 .content-right {
@@ -18,6 +20,7 @@
     border: 5px solid black;
     padding: 1rem;
     margin: 1rem;
+    flex: 1 1 0;
 }
 
 .notes-container {
@@ -30,4 +33,9 @@
     border: 5px solid black;
     padding: 1rem;
     margin: 1rem;
+}
+
+.Day {
+    color: rgb(238, 153, 55);
+    text-align: center;
 }

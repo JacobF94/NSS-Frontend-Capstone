@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { getSingleEx } from "../ApiManager";
+import "./ExerciseDetails.css"
 
 export const ExDetails = () => {
     const [ex, setEx] = useState({})
@@ -23,11 +24,11 @@ export const ExDetails = () => {
     }
     return(
         <>
-            <h2>{ex.name}</h2>
-            <p>{ex.description}</p>
-            <img src={`/images/${ex.imageURL}`} alt="exercise image" />
+            <h1 className="ExName">{ex.name}</h1>
+            <p className="ExDesc">{ex.description}</p>
+            <img className="ExImg" src={`/images/${ex.imageURL}`} alt="exercise image" />
             <br />
-        <button className="bttn" onClick={returnBttn}>Return to list</button>
+        <button className="returnBttn" onClick={returnBttn}>Return to list</button>
         </>
     )
 }

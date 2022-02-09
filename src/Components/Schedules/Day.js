@@ -97,7 +97,7 @@ export const Day = () => {
     return(
         <>
             <div>
-                <h1>{week[dayId]}</h1>
+                <h1 className="Day">{week[dayId]}</h1>
             </div>
             <div>
                 {

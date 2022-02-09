@@ -5,17 +5,17 @@
 
 .homepage_body {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
-    border: 1rem black;
 }
 
 .homepage_today {
     border: 5px solid black;
     padding: 1rem;
     margin: 1rem;
+    flex: 1 1 0;
 }
 
 .homepage_week {
@@ -23,15 +23,30 @@
     padding: 1rem;
     margin: 1rem;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 0;
+    align-items: center;
 }
 
 .homepage-bttn {
-    border: 3px solid rgb(59, 45, 185);
-    padding: 1rem;
-    margin: 1rem;
+    border: 2px solid black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px;
+    transition-duration: 0.2s;
+}
+
+.homepage-bttn:hover {
+    background-color: rgb(238, 153, 55);
+    color: white
 }
 
 .weekday-greeting {
-    background-image: linear-gradient(to left, rgb(211, 95, 211), indigo, blue, green, rgb(104, 5, 74), orange, red);   -webkit-background-clip: text;
+    background-image: linear-gradient(to top, rgb(211, 95, 211), indigo, rgb(236, 45, 220), rgb(34, 34, 185), rgb(158, 31, 31), orange, red);   -webkit-background-clip: text;
     color: transparent;
+    text-align: center;
   }

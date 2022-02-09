@@ -40,10 +40,10 @@ export const ExerciseList = () => {
 
     return(
         <>
-        <div>
-            <button onClick={() => {noWeights()}}>No Weights?</button>
-            <button onClick={() => {hasWeights()}}>Only Weights?</button>
-            <button onClick={() => {clearFilter()}}>Clear Filter</button>
+        <div className="buttons">
+            <button className="filterBttn" onClick={() => {noWeights()}}>No Weights?</button>
+            <button className="filterBttn" onClick={() => {hasWeights()}}>Only Weights?</button>
+            <button className="filterBttn" onClick={() => {clearFilter()}}>Clear Filter</button>
         </div>
             <ul>
                 {exlist.map((x) => {

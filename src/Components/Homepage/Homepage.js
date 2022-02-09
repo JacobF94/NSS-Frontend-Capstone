@@ -30,7 +30,7 @@ export const Homepage = () => {
             </h1>
             <div className="homepage_body">
                 <div className="homepage_today">
-                        <div className="weekday-greeting">Schedule for {week[todayId]}!</div>
+                        <h2 className="weekday-greeting">Schedule for {week[todayId]}!</h2>
                         <ul>
                             {userCurrentDayDetails.map((data) => {
                                 return <li className="exercise_detail" key={`ex--${data.id}`}><Link to={`/exdetails/${data.exercise.id}`}>{data.exercise.name}</Link></li>

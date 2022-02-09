@@ -1,0 +1,14 @@
+.single-ex {
+    padding-bottom: 10px;
+}
+
+.filterBttn {
+    border-radius: 12px;
+    background-color:rgb(238, 153, 55);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

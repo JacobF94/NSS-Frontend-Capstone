@@ -2,6 +2,7 @@ import react, { useState, useEffect } from "react";
 import "./WeeklyView.css";
 import { allUserExerciseDetails } from "../ApiManager";
 import { Link } from "react-router-dom";
+
 export const WeeklyView = () => {
     const [sunday, setSunday] = useState([])
     const [monday, setMonday] = useState([])
