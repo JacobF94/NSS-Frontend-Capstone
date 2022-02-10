@@ -59,3 +59,8 @@ export const deleteNote = (id) => {
         method: "DELETE"
     })
 }
+
+export const getDayNotes = (x,y) => {
+    return fetch(`http://localhost:8088/notes?userId=${x}&dayId=${y}`)
+        .then(res => res.json())
+}
