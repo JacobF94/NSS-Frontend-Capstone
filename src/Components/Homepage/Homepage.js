@@ -1,12 +1,13 @@
 import react, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useEffect } from "react/cjs/react.development"
-import { getUserDayEx } from "../ApiManager"
+import { getUserDayEx, getDayNotes } from "../ApiManager"
 import "./Homepage.css"
 
 export const Homepage = () => {
     const [userCurrentDayDetails, setUserCurrentDay] = useState([])
     const [todayId, setTodayId] = useState(0)
+    const [notes, setNotes] = useState([])
 
     const week = [, "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
@@ -23,6 +24,14 @@ export const Homepage = () => {
             })
     }, [todayId])
 
+    useEffect(()=>{
+        getDayNotes(localStorage.getItem("fitness-user"), todayId)
+            .then((data) => {
+                return setNotes(data)
+            })
+    }, [todayId])
+
+
     return (
         <>
             <h1 className="homepage_greeting">
@@ -36,6 +45,14 @@ export const Homepage = () => {
                                 return <li className="exercise_detail" key={`ex--${data.id}`}><Link to={`/exdetails/${data.exercise.id}`}>{data.exercise.name}</Link></li>
                             })}
                         </ul>
+                        <h2 className="weekday-greeting">Notes for {week[todayId]}!</h2>
+                        {notes.length > 0 ?
+                        <ul>
+                            {notes.map((data) => {
+                                return <li className="exercise_detail" key={`note--${data.id}`}>{data.note}</li>
+                            })}
+                        </ul>
+                        : <p>No notes for today</p>}
                 </div>
                 <div className="homepage_week">
                     <h2>Select a day to edit</h2>
