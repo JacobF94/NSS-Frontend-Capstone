@@ -46,7 +46,6 @@
 }
 
 .weekday-greeting {
-    background-image: linear-gradient(to top, rgb(211, 95, 211), indigo, rgb(236, 45, 220), rgb(34, 34, 185), rgb(158, 31, 31), orange, red);   -webkit-background-clip: text;
-    color: transparent;
+    color: black;
     text-align: center;
   }
