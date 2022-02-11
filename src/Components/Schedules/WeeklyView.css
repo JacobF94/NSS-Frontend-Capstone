@@ -13,7 +13,7 @@
     justify-content: center;
     text-align: center;
     border-radius: 25px;
-    background: rgb(223, 155, 77);;
+    background: rgb(248, 157, 60);;
 
 }
 
@@ -24,7 +24,7 @@ a:link {
   
   /* visited link */
   a:visited {
-    color: rgb(5, 5, 175);
+    color: rgb(0, 0, 0);
   }
   
   /* mouse over link */
